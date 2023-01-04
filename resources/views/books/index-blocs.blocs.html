@@ -1,0 +1,31 @@
+@extends('layouts/sample')
+@section('content')
+<h1 class="d-flex align-items-center">
+    <span>本の一覧（BLOCS利用）</span>
+    <!-- data-attribute="href" data-val=route("book.register") -->
+    <a class="btn btn-outline-success ms-3">新規登録へ</a>
+</h1>
+<table class="table table-striped">
+    <tr>
+        <th style="width: 40px;">ID</th>
+        <th style="width: 300px;">タイトル</th>
+        <th style="width: 100px;">金額</th>
+        <th>概要</th>
+        <th>タグ</th>
+        <th style="width: 80px;">-</th>
+    </tr>
+    <tr data-loop=$bookList data-assign=$book>
+        <td data-val=$book->id></td>
+        <td data-val=$book->title></td>
+        <td data-val=$book->price data-convert="number" data-postfix="円"></td>
+        <td data-val=$book->abstract></td>
+        <td>
+            <span data-loop=$book->tags data-assign=$bookTag>{{ $bookTag->name }}</br></span>
+        </td>
+        <td>
+            <!-- data-attribute="href" data-val=route("book.edit", $book->id) -->
+            <a class="btn btn-outline-secondary btn-sm ms-3">更新</a>
+        </td>
+    </tr>
+</table>
+@endsection
