@@ -29,7 +29,7 @@ class BookController extends Controller
     /**
      * 新規登録画面を表示します.
      */
-    public function register()
+    public function create()
     {
         $book = new Book();
         return view('books.detail', compact('book'));

@@ -1,8 +1,8 @@
 @extends('layouts/sample')
 @section('content')
 <h1 class="d-flex align-items-center">
-    <span>本の一覧（Blade利用）</span>
-    <a href="{{ route('book.register') }}" class="btn btn-outline-success ms-3">新規登録へ</a>
+    <span>（Blade）本の一覧</span>
+    <a href="{{ route('book.create') }}" class="btn btn-outline-success ms-3">新規登録へ</a>
 </h1>
 <table class="table table-striped">
     <tr>

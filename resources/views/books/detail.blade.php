@@ -1,6 +1,6 @@
 @extends('layouts/sample')
 @section('content')
-<h1>本の{{ $book->id ? '編集' : '新規登録' }}（blade利用）</h1>
+<h1>（Blade）本の{{ $book->id ? '編集' : '新規登録' }}</h1>
 
 <form action="" method="POST" class="mt-5">
     @csrf

@@ -30,21 +30,7 @@ class BookRequest extends FormRequest
             'price' => 'bail|required|numeric|min:0',
             'abstract' => 'bail|required|string',
             'tags' => 'bail|nullable|string',
-
-            // バリデーション例です.
-            // $ php artisan make:rule Katakana
-//            'aaa' => [
-//                'bail',
-//                'required',
-//                new Katakana(),
-//                Rule::unique('tags')->whereNotNull('deleted_at')
-//            ]
         ];
-
-        // 新規登録の場合は
-//        if ($this->params('id')) {
-//            // ルール追加.
-//        }
 
         return $rules;
     }

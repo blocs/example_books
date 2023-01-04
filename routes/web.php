@@ -17,12 +17,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/books', '\App\Http\Controllers\BookController@index')->name('book.index');
-Route::get('/books/register', '\App\Http\Controllers\BookController@register')->name('book.register');
-Route::post('/books', '\App\Http\Controllers\BookController@store')->name('book.store');
-Route::get('/books/{id}', '\App\Http\Controllers\BookController@edit')->name('book.edit');
-Route::post('/books/{id}', '\App\Http\Controllers\BookController@update')->name('book.update');
-Route::post('/books/{id}/destroy', '\App\Http\Controllers\BookController@destroy')->name('book.destroy');
+use App\Http\Controllers\BookController;
+
+Route::prefix('books')
+	->name('book.')
+	->group(function () {
+		Route::get('/', [BookController::class, 'index'])->name('index');
+		Route::get('/create', [BookController::class, 'create'])->name('create');
+		Route::post('/', [BookController::class, 'store'])->name('store');
+		Route::get('/{id}/edit', [BookController::class, 'edit'])->where('id', '[0-9]+')->name('edit');
+		Route::post('/{id}', [BookController::class, 'update'])->where('id', '[0-9]+')->name('update');
+		Route::post('/{id}/destroy', [BookController::class, 'destroy'])->where('id', '[0-9]+')->name('destroy');
+	}
+);
 
 // 本に関するCRUD（blocs利用）.
 Route::get('/books-with-blocs', '\App\Http\Controllers\BookController@indexWithBlocs');
