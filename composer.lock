@@ -64,16 +64,16 @@
         },
         {
             "name": "blocs/blocs",
-            "version": "v1.1.5",
+            "version": "v1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blocs/blocs.git",
-                "reference": "b525383fa6e91881fa833799a0ea885b65466d7b"
+                "reference": "b3bca62b4a52a7f87a3be7b2127ad0be17eb1aeb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blocs/blocs/zipball/b525383fa6e91881fa833799a0ea885b65466d7b",
-                "reference": "b525383fa6e91881fa833799a0ea885b65466d7b",
+                "url": "https://api.github.com/repos/blocs/blocs/zipball/b3bca62b4a52a7f87a3be7b2127ad0be17eb1aeb",
+                "reference": "b3bca62b4a52a7f87a3be7b2127ad0be17eb1aeb",
                 "shasum": ""
             },
             "type": "library",
@@ -110,9 +110,9 @@
             ],
             "support": {
                 "issues": "https://github.com/blocs/blocs/issues",
-                "source": "https://github.com/blocs/blocs/tree/v1.1.5"
+                "source": "https://github.com/blocs/blocs/tree/v1.1.6"
             },
-            "time": "2023-01-04T08:18:11+00:00"
+            "time": "2023-01-07T14:06:22+00:00"
         },
         {
             "name": "brick/math",
@@ -1825,16 +1825,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.64.1",
+            "version": "2.65.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "f2e59963f4c4f4fdfb9fcfd752e8d2e2b79a4e2c"
+                "reference": "09acf64155c16dc6f580f36569ae89344e9734a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/f2e59963f4c4f4fdfb9fcfd752e8d2e2b79a4e2c",
-                "reference": "f2e59963f4c4f4fdfb9fcfd752e8d2e2b79a4e2c",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/09acf64155c16dc6f580f36569ae89344e9734a3",
+                "reference": "09acf64155c16dc6f580f36569ae89344e9734a3",
                 "shasum": ""
             },
             "require": {
@@ -1923,7 +1923,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-01-01T23:17:36+00:00"
+            "time": "2023-01-06T15:55:01+00:00"
         },
         {
             "name": "nette/schema",
