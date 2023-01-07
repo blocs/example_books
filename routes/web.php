@@ -30,6 +30,3 @@ Route::prefix('books')
 		Route::post('/{id}/destroy', [BookController::class, 'destroy'])->where('id', '[0-9]+')->name('destroy');
 	}
 );
-
-// 本に関するCRUD（blocs利用）.
-Route::get('/books-with-blocs', '\App\Http\Controllers\BookController@indexWithBlocs');
