@@ -4,25 +4,26 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Collection;
 
 class Book extends Model
 {
     use HasFactory;
 
-    protected $fillable = [ 'title', 'price', 'abstract' ];
+    protected $fillable = ['title', 'price', 'abstract'];
 
     /**
      * タグの一覧（表示ラベルのみ）.
      */
-    public function tagLabels() {
+    public function tagLabels()
+    {
         return $this->tags()->pluck('name')->toArray();
     }
 
     /**
      * タグの一覧.
      */
-    public function tags() {
+    public function tags()
+    {
         return $this->hasMany(BookTag::class);
     }
 }

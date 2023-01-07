@@ -9,5 +9,5 @@ class BookTag extends Model
 {
     use HasFactory;
 
-    protected $fillable = [ 'book_id', 'name' ];
+    protected $fillable = ['book_id', 'name'];
 }

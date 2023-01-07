@@ -2,9 +2,7 @@
 
 namespace App\Http\Requests;
 
-use App\Rules\Katakana;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
 class BookRequest extends FormRequest
 {
@@ -25,25 +23,15 @@ class BookRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = [
-            'title' => 'bail|required|string|max:50',
-            'price' => 'bail|required|numeric|min:0',
-            'abstract' => 'bail|required|string',
-            'tags' => 'bail|nullable|string',
-        ];
+        list($validate, $message) = \Blocs\Validate::get('books.create');
 
-        return $rules;
+        return $validate;
     }
 
+    public function messages()
+    {
+        list($validate, $message) = \Blocs\Validate::get('books.create');
 
-
-    public function attributes() {
-        return [
-            'title' => 'タイトル',
-            'price' => '価格',
-            'abstract' => '概要',
-            'tags' => 'タグ',
-        ];
+        return $message;
     }
-
 }

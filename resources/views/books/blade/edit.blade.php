@@ -1,6 +1,6 @@
 @extends('layouts/sample')
 @section('content')
-<h1>（Blade）本の{{ $book->id ? '編集' : '新規登録' }}</h1>
+<h1>（Blade）本の編集</h1>
 
 <form action="" method="POST" class="mt-5">
     @csrf
@@ -29,13 +29,9 @@
         </div>
     </div>
     <div class="d-flex align-items-center justify-content-center mt-5">
-        @if ($book->id)
-            <input type="hidden" name="id" value="{{ $book->id }}">
-            <input type="submit" class="btn btn-primary" value="更新する" formaction="{{ route('book.update', $book->id) }}"/>
-            <input type="submit" class="btn btn-danger ms-3" value="削除する" formaction="{{ route('book.destroy', $book->id) }}"/>
-        @else
-            <input type="submit" class="btn btn-primary" value="新規登録する" formaction="{{ route('book.store') }}"/>
-        @endif
+        <input type="hidden" name="id" value="{{ $book->id }}">
+        <input type="submit" class="btn btn-primary" value="更新する" formaction="{{ route('book.update', $book->id) }}"/>
+        <input type="submit" class="btn btn-danger ms-3" value="削除する" formaction="{{ route('book.destroy', $book->id) }}"/>
     </div>
 </form>
 

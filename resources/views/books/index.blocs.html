@@ -14,7 +14,7 @@
         <th>タグ</th>
         <th style="width: 80px;">-</th>
     </tr>
-    <tr data-loop=$bookList data-assign=$book>
+    <tr data-loop=$books>
         <td data-val=$book->id></td>
         <td data-val=$book->title></td>
         <td data-val=$book->price data-convert="number" data-postfix="円"></td>
