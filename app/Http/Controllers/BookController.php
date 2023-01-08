@@ -41,7 +41,12 @@ class BookController extends Controller
         // 本のタグの登録.
         $tags = explode("\n", $request->input('tags', ''));
         foreach ($tags as $tag) {
-            (new BookTag())->fill(['book_id' => $book->id, 'name' => trim($tag)])->save();
+            $tag = trim($tag);
+            if (empty($tag)) {
+                continue;
+            }
+
+            (new BookTag())->fill(['book_id' => $book->id, 'name' => $tag])->save();
         }
 
         return redirect()->route('book.index')->with([
@@ -79,7 +84,12 @@ class BookController extends Controller
         BookTag::where('book_id', $id)->delete();
         $tags = explode("\n", $request->input('tags', ''));
         foreach ($tags as $tag) {
-            (new BookTag())->fill(['book_id' => $book->id, 'name' => trim($tag)])->save();
+            $tag = trim($tag);
+            if (empty($tag)) {
+                continue;
+            }
+
+            (new BookTag())->fill(['book_id' => $book->id, 'name' => $tag])->save();
         }
 
         return redirect()->route('book.index')->with([
@@ -94,6 +104,9 @@ class BookController extends Controller
     {
         $book = Book::findOrFail($id);
         $book->delete();
+
+        // 本のタグの削除.
+        BookTag::where('book_id', $id)->delete();
 
         return redirect()->route('book.index')->with([
             'message' => "削除しました（id={$book->id}）.",
