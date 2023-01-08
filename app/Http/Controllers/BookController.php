@@ -24,6 +24,7 @@ class BookController extends Controller
     public function create()
     {
         $book = new Book();
+        self::option_tags();
 
         return view('books.create', compact('book'));
     }
@@ -39,15 +40,7 @@ class BookController extends Controller
         $book->save();
 
         // 本のタグの登録.
-        $tags = explode("\n", $request->input('tags', ''));
-        foreach ($tags as $tag) {
-            $tag = trim($tag);
-            if (empty($tag)) {
-                continue;
-            }
-
-            (new BookTag())->fill(['book_id' => $book->id, 'name' => $tag])->save();
-        }
+        self::insert_tags($book->id, $request->input('tags'));
 
         return redirect()->route('book.index')->with([
             'message' => "新規登録しました（id={$book->id}）.",
@@ -64,8 +57,10 @@ class BookController extends Controller
 
         if (empty(old())) {
             $val = array_merge($val, $book->toArray());
-            $val['tags'] = join("\n", $book->tagLabels());
+            $val['tags'] = $book->tagLabels();
         }
+
+        self::option_tags();
 
         return view('books.edit', $val);
     }
@@ -82,15 +77,7 @@ class BookController extends Controller
 
         // 本のタグの更新（Delete & Insert）.
         BookTag::where('book_id', $id)->delete();
-        $tags = explode("\n", $request->input('tags', ''));
-        foreach ($tags as $tag) {
-            $tag = trim($tag);
-            if (empty($tag)) {
-                continue;
-            }
-
-            (new BookTag())->fill(['book_id' => $book->id, 'name' => $tag])->save();
-        }
+        self::insert_tags($book->id, $request->input('tags'));
 
         return redirect()->route('book.index')->with([
             'message' => "更新しました（id={$book->id}）.",
@@ -111,5 +98,29 @@ class BookController extends Controller
         return redirect()->route('book.index')->with([
             'message' => "削除しました（id={$book->id}）.",
         ]);
+    }
+
+    private static function option_tags()
+    {
+        $book_tags = BookTag::select('name')->distinct('name')->orderBy('name')->get();
+        foreach ($book_tags as $book_tag) {
+            \Blocs\Option::add('tags', $book_tag['name']);
+        }
+    }
+
+    private static function insert_tags($book_id, $tags)
+    {
+        if (!is_array($tags)) {
+            return;
+        }
+
+        foreach ($tags as $tag) {
+            $tag = trim($tag);
+            if (empty($tag)) {
+                continue;
+            }
+
+            (new BookTag())->fill(['book_id' => $book_id, 'name' => $tag])->save();
+        }
     }
 }

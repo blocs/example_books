@@ -25,14 +25,16 @@
         </div>
     </div>
     <div class="row mt-3">
-        <div class="col-4">タグ（改行区切り）</div>
+        <div class="col-4">タグ</div>
         <div class="col-8">
-            <textarea name="tags" rows="3" class="form-control" data-validate="bail|nullable|string"></textarea>
+            <select class="select2" name="tags[]" multiple="multiple" style="width:100%"></select>
         </div>
     </div>
     <div class="d-flex align-items-center justify-content-center mt-5">
         <input type="submit" class="btn btn-primary" value="新規登録する" formaction="{{ route('book.store') }}"/>
     </div>
 </form>
+
+<!-- data-include="select2.html" -->
 
 @endsection
