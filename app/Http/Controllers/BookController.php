@@ -14,6 +14,7 @@ class BookController extends Controller
     public function index()
     {
         $books = Book::all();
+        self::option_tags('name');
 
         return view('books.index', compact('books'));
     }
@@ -24,7 +25,7 @@ class BookController extends Controller
     public function create()
     {
         $book = new Book();
-        self::option_tags();
+        self::option_tags('tags');
 
         return view('books.create', compact('book'));
     }
@@ -60,7 +61,7 @@ class BookController extends Controller
             $val['tags'] = $book->tagLabels();
         }
 
-        self::option_tags();
+        self::option_tags('tags');
 
         return view('books.edit', $val);
     }
@@ -100,27 +101,33 @@ class BookController extends Controller
         ]);
     }
 
-    private static function option_tags()
+    private static function option_tags($option_name)
     {
-        $book_tags = BookTag::select('name')->distinct('name')->orderBy('name')->get();
+        \Blocs\Option::add($option_name, [
+            'Ash' => '灰色',
+            'Blue' => 'ブルー',
+            'Pink' => 'ピンク',
+        ]);
+
+        $book_tags = BookTag::select('name')->distinct()->orderBy('name')->get();
         foreach ($book_tags as $book_tag) {
-            \Blocs\Option::add('tags', $book_tag['name']);
+            \Blocs\Option::add($option_name, $book_tag->name);
         }
     }
 
-    private static function insert_tags($book_id, $tags)
+    private static function insert_tags($book_id, $book_tag_names)
     {
-        if (!is_array($tags)) {
+        if (!is_array($book_tag_names)) {
             return;
         }
 
-        foreach ($tags as $tag) {
-            $tag = trim($tag);
-            if (empty($tag)) {
+        foreach ($book_tag_names as $book_tag_name) {
+            $book_tag_name = trim($book_tag_name);
+            if (empty($book_tag_name)) {
                 continue;
             }
 
-            (new BookTag())->fill(['book_id' => $book_id, 'name' => $tag])->save();
+            (new BookTag())->fill(['book_id' => $book_id, 'name' => $book_tag_name])->save();
         }
     }
 }

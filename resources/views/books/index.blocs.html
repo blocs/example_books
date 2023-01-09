@@ -20,7 +20,7 @@
         <td data-val=$book->price data-convert="number" data-postfix="円"></td>
         <td data-val=$book->abstract></td>
         <td>
-            <span data-loop=$book->tags data-assign=$bookTag>{{ $bookTag->name }}</br></span>
+            <span data-loop=$book->tags data-assign=$bookTag><!-- data-val=$bookTag->name --></br></span>
         </td>
         <td>
             <!-- data-attribute="href" data-val=route("book.edit", $book->id) -->
