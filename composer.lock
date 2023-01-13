@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "31bbe757612e0034bb0920c993753cbb",
+    "content-hash": "d0276c15665aa1680526505181aad871",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -63,17 +63,60 @@
             "time": "2022-01-18T09:12:03+00:00"
         },
         {
-            "name": "blocs/blocs",
-            "version": "v1.1.6",
+            "name": "blocs/autoinclude",
+            "version": "dev-main",
             "source": {
                 "type": "git",
-                "url": "https://github.com/blocs/blocs.git",
-                "reference": "b3bca62b4a52a7f87a3be7b2127ad0be17eb1aeb"
+                "url": "https://github.com/blocs/autoinclude.git",
+                "reference": "43930bbe5fb25abe64fbc0307ca6f66c72b58ba4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blocs/blocs/zipball/b3bca62b4a52a7f87a3be7b2127ad0be17eb1aeb",
-                "reference": "b3bca62b4a52a7f87a3be7b2127ad0be17eb1aeb",
+                "url": "https://api.github.com/repos/blocs/autoinclude/zipball/43930bbe5fb25abe64fbc0307ca6f66c72b58ba4",
+                "reference": "43930bbe5fb25abe64fbc0307ca6f66c72b58ba4",
+                "shasum": ""
+            },
+            "require": {
+                "blocs/blocs": "*"
+            },
+            "default-branch": true,
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "LINEAR JAPAN Co.,Ltd.",
+                    "email": "admin@linear-jp.biz",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "The auto include template for BLOCS",
+            "keywords": [
+                "Blocs",
+                "laravel",
+                "package",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/blocs/autoinclude/issues",
+                "source": "https://github.com/blocs/autoinclude/tree/main"
+            },
+            "time": "2023-01-13T05:51:28+00:00"
+        },
+        {
+            "name": "blocs/blocs",
+            "version": "v1.1.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/blocs/blocs.git",
+                "reference": "9e8ed5290890ceb2fc62930a686091d2031d3aa4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/blocs/blocs/zipball/9e8ed5290890ceb2fc62930a686091d2031d3aa4",
+                "reference": "9e8ed5290890ceb2fc62930a686091d2031d3aa4",
                 "shasum": ""
             },
             "type": "library",
@@ -110,9 +153,9 @@
             ],
             "support": {
                 "issues": "https://github.com/blocs/blocs/issues",
-                "source": "https://github.com/blocs/blocs/tree/v1.1.6"
+                "source": "https://github.com/blocs/blocs/tree/v1.1.8"
             },
-            "time": "2023-01-07T14:06:22+00:00"
+            "time": "2023-01-13T05:55:57+00:00"
         },
         {
             "name": "brick/math",
@@ -1317,22 +1360,22 @@
         },
         {
             "name": "laravel/tinker",
-            "version": "v2.7.3",
+            "version": "v2.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/tinker.git",
-                "reference": "5062061b4924af3392225dd482ca7b4d85d8b8ef"
+                "reference": "74d0b287cc4ae65d15c368dd697aae71d62a73ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/tinker/zipball/5062061b4924af3392225dd482ca7b4d85d8b8ef",
-                "reference": "5062061b4924af3392225dd482ca7b4d85d8b8ef",
+                "url": "https://api.github.com/repos/laravel/tinker/zipball/74d0b287cc4ae65d15c368dd697aae71d62a73ad",
+                "reference": "74d0b287cc4ae65d15c368dd697aae71d62a73ad",
                 "shasum": ""
             },
             "require": {
-                "illuminate/console": "^6.0|^7.0|^8.0|^9.0",
-                "illuminate/contracts": "^6.0|^7.0|^8.0|^9.0",
-                "illuminate/support": "^6.0|^7.0|^8.0|^9.0",
+                "illuminate/console": "^6.0|^7.0|^8.0|^9.0|^10.0",
+                "illuminate/contracts": "^6.0|^7.0|^8.0|^9.0|^10.0",
+                "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0",
                 "php": "^7.2.5|^8.0",
                 "psy/psysh": "^0.10.4|^0.11.1",
                 "symfony/var-dumper": "^4.3.4|^5.0|^6.0"
@@ -1342,7 +1385,7 @@
                 "phpunit/phpunit": "^8.5.8|^9.3.3"
             },
             "suggest": {
-                "illuminate/database": "The Illuminate Database package (^6.0|^7.0|^8.0|^9.0)."
+                "illuminate/database": "The Illuminate Database package (^6.0|^7.0|^8.0|^9.0|^10.0)."
             },
             "type": "library",
             "extra": {
@@ -1379,9 +1422,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/tinker/issues",
-                "source": "https://github.com/laravel/tinker/tree/v2.7.3"
+                "source": "https://github.com/laravel/tinker/tree/v2.8.0"
             },
-            "time": "2022-11-09T15:11:38+00:00"
+            "time": "2023-01-10T18:03:30+00:00"
         },
         {
             "name": "league/commonmark",
@@ -5944,22 +5987,22 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.17.0",
+            "version": "v1.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "7d69da7b2bdb8cbe8da6663eb2ae0e00c884bf80"
+                "reference": "77feb38df1cf8700c19487957dfb12087cd696c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/7d69da7b2bdb8cbe8da6663eb2ae0e00c884bf80",
-                "reference": "7d69da7b2bdb8cbe8da6663eb2ae0e00c884bf80",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/77feb38df1cf8700c19487957dfb12087cd696c7",
+                "reference": "77feb38df1cf8700c19487957dfb12087cd696c7",
                 "shasum": ""
             },
             "require": {
-                "illuminate/console": "^8.0|^9.0",
-                "illuminate/contracts": "^8.0|^9.0",
-                "illuminate/support": "^8.0|^9.0",
+                "illuminate/console": "^8.0|^9.0|^10.0",
+                "illuminate/contracts": "^8.0|^9.0|^10.0",
+                "illuminate/support": "^8.0|^9.0|^10.0",
                 "php": "^7.3|^8.0"
             },
             "bin": [
@@ -6000,7 +6043,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2022-12-22T14:46:08+00:00"
+            "time": "2023-01-10T16:14:21+00:00"
         },
         {
             "name": "mockery/mockery",
