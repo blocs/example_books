@@ -68,12 +68,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blocs/autoinclude.git",
-                "reference": "43930bbe5fb25abe64fbc0307ca6f66c72b58ba4"
+                "reference": "9414fb103558f9633f1a5e587410673155a94e26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blocs/autoinclude/zipball/43930bbe5fb25abe64fbc0307ca6f66c72b58ba4",
-                "reference": "43930bbe5fb25abe64fbc0307ca6f66c72b58ba4",
+                "url": "https://api.github.com/repos/blocs/autoinclude/zipball/9414fb103558f9633f1a5e587410673155a94e26",
+                "reference": "9414fb103558f9633f1a5e587410673155a94e26",
                 "shasum": ""
             },
             "require": {
@@ -103,20 +103,20 @@
                 "issues": "https://github.com/blocs/autoinclude/issues",
                 "source": "https://github.com/blocs/autoinclude/tree/main"
             },
-            "time": "2023-01-13T05:51:28+00:00"
+            "time": "2023-01-13T11:16:06+00:00"
         },
         {
             "name": "blocs/blocs",
-            "version": "v1.1.8",
+            "version": "v1.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blocs/blocs.git",
-                "reference": "9e8ed5290890ceb2fc62930a686091d2031d3aa4"
+                "reference": "9a67ac5153140e3656dea187fdad6185934c95e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blocs/blocs/zipball/9e8ed5290890ceb2fc62930a686091d2031d3aa4",
-                "reference": "9e8ed5290890ceb2fc62930a686091d2031d3aa4",
+                "url": "https://api.github.com/repos/blocs/blocs/zipball/9a67ac5153140e3656dea187fdad6185934c95e6",
+                "reference": "9a67ac5153140e3656dea187fdad6185934c95e6",
                 "shasum": ""
             },
             "type": "library",
@@ -153,9 +153,9 @@
             ],
             "support": {
                 "issues": "https://github.com/blocs/blocs/issues",
-                "source": "https://github.com/blocs/blocs/tree/v1.1.8"
+                "source": "https://github.com/blocs/blocs/tree/v1.1.9"
             },
-            "time": "2023-01-13T05:55:57+00:00"
+            "time": "2023-01-14T12:43:31+00:00"
         },
         {
             "name": "brick/math",
@@ -6694,20 +6694,20 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.5.27",
+            "version": "9.5.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "a2bc7ffdca99f92d959b3f2270529334030bba38"
+                "reference": "954ca3113a03bf780d22f07bf055d883ee04b65e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a2bc7ffdca99f92d959b3f2270529334030bba38",
-                "reference": "a2bc7ffdca99f92d959b3f2270529334030bba38",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/954ca3113a03bf780d22f07bf055d883ee04b65e",
+                "reference": "954ca3113a03bf780d22f07bf055d883ee04b65e",
                 "shasum": ""
             },
             "require": {
-                "doctrine/instantiator": "^1.3.1",
+                "doctrine/instantiator": "^1.3.1 || ^2",
                 "ext-dom": "*",
                 "ext-json": "*",
                 "ext-libxml": "*",
@@ -6776,7 +6776,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.27"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.28"
             },
             "funding": [
                 {
@@ -6792,7 +6792,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-12-09T07:31:23+00:00"
+            "time": "2023-01-14T12:32:24+00:00"
         },
         {
             "name": "sebastian/cli-parser",

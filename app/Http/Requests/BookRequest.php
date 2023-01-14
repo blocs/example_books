@@ -23,15 +23,11 @@ class BookRequest extends FormRequest
      */
     public function rules()
     {
-        list($validate, $message) = \Blocs\Validate::get('books.create');
-
-        return $validate;
+        return \Blocs\Validate::rules('books.create');
     }
 
     public function messages()
     {
-        list($validate, $message) = \Blocs\Validate::get('books.create');
-
-        return $message;
+        return \Blocs\Validate::messages('books.create');
     }
 }
