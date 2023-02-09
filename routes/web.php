@@ -18,11 +18,12 @@ Route::get('/', function () {
 });
 
 use App\Http\Controllers\BookController;
+use Blocs\Middleware\StaticGenerator;
 
 Route::prefix('books')
 	->name('book.')
 	->group(function () {
-		Route::get('/', [BookController::class, 'index'])->name('index');
+		Route::get('/', [BookController::class, 'index'])->middleware(StaticGenerator::class)->name('index');
 		Route::get('/create', [BookController::class, 'create'])->name('create');
 		Route::post('/', [BookController::class, 'store'])->name('store');
 		Route::get('/{id}/edit', [BookController::class, 'edit'])->where('id', '[0-9]+')->name('edit');
